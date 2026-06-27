@@ -154,7 +154,17 @@ data/ground_truth/ baskets.parquet (873 real EA baskets)  trades_all.parquet
 findings/         lessons/  replay_trades.*  replay_expectancy.md  three_way_comparison.md
 reports/          per-episode prompts + results;  _examples/ committed samples
 tests/            test_no_lookahead.py
+live/             live MT5 deployment of the SAME strategy (run_live_quantum.py + quantum/)
 ```
+
+## Going live
+
+The replay harness is the *research* side — prove the edge bias-free. The deploy side
+lives in [`live/`](live/README.md): the **same** Quantum Queen grid wired to a live MT5
+broker via a parity-tested Broker / margin-guard / kill-switch / reconcile chassis, with
+the decision + feature math **imported** from the canonical `quantumstrategy` repo so it
+cannot drift from what was validated here. Three gates (feature parity, replay parity,
+margin / no-DQ) must be green before go-live — see [`live/README.md`](live/README.md).
 
 ## Data provenance
 

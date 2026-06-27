@@ -1,0 +1,7 @@
+# Live trading deps for the WINDOWS box (in addition to requirements.txt).
+# MetaTrader5 is Windows-only; it attaches to a locally-installed MT5 terminal.
+MetaTrader5>=5.0.45
+pandas>=2.0
+numpy>=1.24
+pyarrow>=12.0
+scikit-learn>=1.3
