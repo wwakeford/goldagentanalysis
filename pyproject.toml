@@ -1,0 +1,18 @@
+[project]
+name = "goldreplay"
+version = "0.1.0"
+description = "Parallel no-lookahead Claude subagents trading gold (XAUUSD), bar by bar."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "pyarrow>=12.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/goldreplay"]

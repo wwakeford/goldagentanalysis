@@ -1,0 +1,72 @@
+{
+  "episode_id": "2024-06-07.evening",
+  "date": "2024-06-07",
+  "window": "evening",
+  "start_utc": "2024-06-07T15:00:00",
+  "end_utc": "2024-06-07T21:00:00",
+  "ea_ground_truth": {
+    "n_baskets": 6,
+    "directions": [
+      "sell",
+      "sell",
+      "sell",
+      "sell",
+      "sell",
+      "sell"
+    ],
+    "total_profit_usd": 43.2,
+    "basket_ids": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "observations": [
+    {
+      "time": "18:14",
+      "note": "evening 4h down, breaking 60-min low",
+      "tag": "evening_trend_breakout"
+    }
+  ],
+  "baskets": [
+    {
+      "direction": "short",
+      "manage": "grid",
+      "setup": "evening_trend_breakout",
+      "thesis": "4h down, breaking session low into a void",
+      "open_time": "18:14",
+      "close_time": "18:17",
+      "first_lot": 0.83,
+      "legs": [
+        [
+          2314.935,
+          0.83
+        ]
+      ],
+      "n_legs": 1,
+      "vwap": 2314.935,
+      "tp_per_oz": 1.0,
+      "invalidation": 2330.0,
+      "close_price": 2313.665,
+      "close_reason": "tp",
+      "outcome": "win",
+      "forced": false,
+      "pnl_usd": 105.41,
+      "pnl_per_oz": 1.27,
+      "r_multiple": 0.08,
+      "mfe_per_oz": 1.27,
+      "mae_per_oz": -0.39,
+      "hold_min": 3.0,
+      "vs_1oz_tp": "hit"
+    }
+  ],
+  "n_observations": 1,
+  "n_baskets": 1,
+  "setups_triggered": [
+    "evening_trend_breakout"
+  ],
+  "total_pnl_usd": 105.41
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "evening_trend_breakout",
+    "title": "Evening session trend breakout",
+    "heuristic": "Evening window (broker 18-23), a strong 4h trend (|mom_4h| >= ~$20) and price breaking to the trend-side extreme of the 60-min range (rng_pos >= 0.80 long / <= 0.20 short) — arm a basket in the 4h-trend direction.",
+    "applies_when": {"window": "evening", "side": "either"},
+    "confidence": 0.7
+  },
+  {
+    "slug": "midnight_long_thrust",
+    "title": "Midnight Asian-open long thrust",
+    "heuristic": "Midnight window (broker ~3) on a firm uptrend; live EA was ~100% long here. Long-only thrust off the Asian open with a slightly lower trend floor.",
+    "applies_when": {"window": "midnight", "side": "long"},
+    "confidence": 0.6
+  },
+  {
+    "slug": "morning_two_sided_breakout",
+    "title": "Morning two-sided breakout",
+    "heuristic": "Morning window (broker 8-11): weaker trend floor (~$10) but a slightly stronger breakout fraction; more two-sided than evening/midnight.",
+    "applies_when": {"window": "morning", "side": "either"},
+    "confidence": 0.55
+  },
+  {
+    "slug": "grid_recovery",
+    "title": "Grid recovery to aggregate take-profit",
+    "heuristic": "An adverse-add basket whose VWAP is dragged back to the ~$1/oz aggregate take-profit as price reverts. The bread-and-butter winner (98% of live baskets close green).",
+    "applies_when": {"window": "any", "side": "either"},
+    "confidence": 0.75
+  },
+  {
+    "slug": "counter_trend_trap",
+    "title": "Counter-trend stuck basket (AVOID)",
+    "heuristic": "The tail risk: a basket armed against the higher-timeframe trend that price never reverts to, grinding the grid to its max adverse / stop. Recognising and NOT arming this is the edge.",
+    "applies_when": {"window": "any", "side": "either"},
+    "confidence": 0.8
+  }
+]

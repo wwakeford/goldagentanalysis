@@ -1,0 +1,3 @@
+episode_id,date,window,setup,direction,manage,first_lot,n_legs,open_time,close_time,close_reason,outcome,result,forced,pnl_usd,pnl_per_oz,r_multiple,mfe_per_oz,mae_per_oz,hold_min,vs_1oz_tp,ea_n_baskets,ea_total_profit
+2024-06-07.evening,2024-06-07,evening,evening_trend_breakout,short,grid,0.83,1,18:14,18:17,tp,win,win,False,105.41,1.27,0.08,1.27,-0.39,3.0,hit,6,43.2
+2024-06-07.evening,2024-06-07,evening,evening_trend_breakout,short,grid,0.83,1,18:14,18:17,tp,win,win,False,105.41,1.27,0.08,1.27,-0.39,3.0,hit,6,43.2

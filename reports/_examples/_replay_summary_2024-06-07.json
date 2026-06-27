@@ -1,0 +1,25 @@
+{
+  "date": "2024-06-07",
+  "episodes": [
+    {
+      "episode_id": "2024-06-07.evening",
+      "window": "evening",
+      "n_observations": 1,
+      "n_baskets": 1,
+      "setups": [
+        "evening_trend_breakout"
+      ],
+      "pnl_usd": 105.41,
+      "ea_pnl_usd": 43.2
+    }
+  ],
+  "per_setup": {
+    "evening_trend_breakout": {
+      "n": 1,
+      "long": 0,
+      "short": 1,
+      "pnl": 105.41
+    }
+  },
+  "total_pnl_usd": 105.41
+}
