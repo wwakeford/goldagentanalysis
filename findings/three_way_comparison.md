@@ -2,10 +2,10 @@
 
 Metric is **$/oz** (account-size-independent). `dirs`: agent l/s, engine & live b/s.
 
-## 2024-06-07.evening
+## 2025-04-07.evening
 
 | source | n_baskets | total_per_oz | win_rate | avg_hold_min | dirs |
 | --- | --- | --- | --- | --- | --- |
-| AGENT | 1 | 1.27 | 1.0 | 3.0 | s |
-| ENGINE | 6 | 8.653 | 1.0 | 22.2 | s,s,s,s,s,s |
-| LIVE_EA | 6 | 8.032 | 1.0 | 567.7 | s,s,s,s,s,s |
+| AGENT | 2 | 2.511 | 1.0 | 3.0 | s,s |
+| ENGINE | 18 | 37.221 | 1.0 | 6.3 | s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s |
+| LIVE_EA | 2 | 6.432 | 1.0 | 299.0 | s,s |

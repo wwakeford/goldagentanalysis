@@ -1,0 +1,175 @@
+{
+  "episode_id": "2025-04-07.evening",
+  "date": "2025-04-07",
+  "window": "evening",
+  "start_utc": "2025-04-07T15:00:00",
+  "end_utc": "2025-04-07T21:00:00",
+  "ea_ground_truth": {
+    "n_baskets": 2,
+    "directions": [
+      "sell",
+      "sell"
+    ],
+    "total_profit_usd": 144.29,
+    "basket_ids": [
+      77,
+      78
+    ]
+  },
+  "observations": [
+    {
+      "time": "18:14",
+      "note": "Evening window, strong 4h downtrend mom_4h=-55.5 but price already AT 60-min low (rng_pos=0, dist_lo60=0). Late to chase short here; watch for grid-able pullback.",
+      "tag": null
+    },
+    {
+      "time": "18:29",
+      "note": "Small bounce to 2987, rng_pos=0.07. Not breaking new lows; no short trigger yet. Holding flat.",
+      "tag": null
+    },
+    {
+      "time": "18:44",
+      "note": "Fresh session low 2982, rng_pos=0.10 < 0.20 short threshold, mom_4h=-54.9 strong down, evening window. Breakout-side short trigger.",
+      "tag": "evening_trend_breakout"
+    },
+    {
+      "time": "18:59",
+      "note": "Short basket hit TP @2982.88 for +$111 (1.34/oz) immediately. Now flat, price bounced to 2987.6 rng_pos=0.30. No new trigger.",
+      "tag": null
+    },
+    {
+      "time": "19:14",
+      "note": "New session low 2980.12, rng_pos=0.0, dist_lo60=0, mom_4h=-45.7 still strong down, evening window. Fresh breakout-side short trigger.",
+      "tag": "evening_trend_breakout"
+    },
+    {
+      "time": "19:29",
+      "note": "2nd short grid-recovered: added leg on bounce to 2983.3 (vwap 2981.5), TP closed @2980.3 for +$195 (1.17/oz). Now flat at 2978. 2 baskets armed, both green. At session discipline cap.",
+      "tag": null
+    },
+    {
+      "time": "19:44",
+      "note": "Downtrend grinds on, fresh low 2975.18, mom_4h=-45. Another clean short trigger but already at 2-basket discipline cap; staying flat.",
+      "tag": null
+    },
+    {
+      "time": "19:59",
+      "note": "Trend accelerating, mom_4h=-60.5, fresh low 2970.7. Session has been one-way down; both my baskets caught it. Staying flat at cap.",
+      "tag": null
+    },
+    {
+      "time": "20:14",
+      "note": "Window now=other (out of session entry window). No new arms allowed. Price 2966 still falling. Flat.",
+      "tag": null
+    },
+    {
+      "time": "21:14",
+      "note": "Window back to evening but conflicted: rng_pos=0.84 (range high) yet mom_4h=-56 (strong down). Long here = counter_trend_trap against the 4h trend; short has no breakout (at range top). No trade.",
+      "tag": null
+    },
+    {
+      "time": "21:59",
+      "note": "Rolled back over to 2965.9, rng_pos=0.12 < 0.20, mom_4h=-33.6 above floor, evening window: a valid evening_trend_breakout short re-trigger. But already at 2-basket cap, so staying flat per discipline.",
+      "tag": null
+    },
+    {
+      "time": "22:14",
+      "note": "Vindicated staying flat: price bounced to 2971.8, mom_4h collapsed to -13.15 below the 20 floor. Trend no longer strong enough to arm. No trade.",
+      "tag": null
+    },
+    {
+      "time": "22:29",
+      "note": "rng_pos=0.81 but mom_4h=-12.9 (negative AND below floor), rsi 79 overbought. Long would fight trend + sub-floor; no short either. No trade.",
+      "tag": null
+    },
+    {
+      "time": "23:14",
+      "note": "mom_4h flat at -0.7, no 4h trend left, rsi 89.6 overbought. No qualifying setup into session end.",
+      "tag": null
+    },
+    {
+      "time": "23:44",
+      "note": "Late long bounce, mom_4h=10.1 still under 20 floor at session end. No arm. Staying flat into EOD.",
+      "tag": null
+    },
+    {
+      "time": "23:59",
+      "note": "Final bar 23:59, flat. Session done. mom_4h=12.7 still sub-floor. Ending flat with 2 winning shorts booked.",
+      "tag": null
+    }
+  ],
+  "baskets": [
+    {
+      "direction": "short",
+      "manage": "grid",
+      "setup": "evening_trend_breakout",
+      "thesis": "Evening window + strong 4h downtrend (mom_4h=-55) + price breaking trend-side 60-min low extreme (rng_pos=0.10). Short with the 4h trend, grid adds on bounces.",
+      "open_time": "18:44",
+      "close_time": "18:46",
+      "first_lot": 0.83,
+      "legs": [
+        [
+          2984.215,
+          0.83
+        ]
+      ],
+      "n_legs": 1,
+      "vwap": 2984.215,
+      "tp_per_oz": 1.0,
+      "invalidation": 3010.0,
+      "close_price": 2982.877,
+      "close_reason": "tp",
+      "outcome": "win",
+      "forced": false,
+      "pnl_usd": 111.05,
+      "pnl_per_oz": 1.338,
+      "r_multiple": 0.05,
+      "mfe_per_oz": 1.338,
+      "mae_per_oz": -0.64,
+      "hold_min": 2.0,
+      "vs_1oz_tp": "hit",
+      "postmortem": "First short was a clean evening_trend_breakout grid winner; entry near 2982 low, closed within minutes at TP."
+    },
+    {
+      "direction": "short",
+      "manage": "grid",
+      "setup": "evening_trend_breakout",
+      "thesis": "Evening window, strong 4h downtrend continuing, price breaking trend-side 60-min low to fresh lows. Short with trend, grid adds on bounces.",
+      "open_time": "19:14",
+      "close_time": "19:18",
+      "first_lot": 0.83,
+      "legs": [
+        [
+          2979.665,
+          0.83
+        ],
+        [
+          2983.315,
+          0.83
+        ]
+      ],
+      "n_legs": 2,
+      "vwap": 2981.49,
+      "tp_per_oz": 1.0,
+      "invalidation": 3008.0,
+      "close_price": 2980.317,
+      "close_reason": "tp",
+      "outcome": "win",
+      "forced": false,
+      "pnl_usd": 194.72,
+      "pnl_per_oz": 1.173,
+      "r_multiple": 0.04,
+      "mfe_per_oz": 1.173,
+      "mae_per_oz": -2.495,
+      "hold_min": 4.0,
+      "vs_1oz_tp": "hit",
+      "postmortem": "2nd short was textbook grid_recovery: adverse bounce added a leg, downtrend resumed and dragged vwap to aggregate TP."
+    }
+  ],
+  "n_observations": 16,
+  "n_baskets": 2,
+  "setups_triggered": [
+    "evening_trend_breakout"
+  ],
+  "total_pnl_usd": 305.77
+}
