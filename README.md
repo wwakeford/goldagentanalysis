@@ -1,19 +1,52 @@
 # goldreplay
 
-**Parallel Claude subagents trade gold (XAUUSD) with a provable no-look-forward bias — one bar at a time.**
+**Spawn one Claude agent per trading day. Hand each a strategy idea and a shared tag vocabulary. Let it walk the day forward like a real trader — with no look-ahead bias — noting and tagging what it sees, so the knowledge accumulates and feeds the next wave of agents.**
 
-A fleet of Claude Code subagents each walk *one* gold trading session forward in 15-minute
-steps, deciding when to open a basket, how to steer it, and when to close — **committing every
-decision before the next bar is revealed.** They cannot peek at the future, by construction. The
-realized P&L is computed server-side and benchmarked against the deterministic strategy rule and
-the *real* live EA that traded the same sessions.
+---
+
+## What this is
+
+**The idea.** We start with a hunch about how gold trades — a strategy idea (e.g. *"in an active
+session, a strong 4-hour trend that breaks out tends to continue"*). Instead of hard-coding that
+hunch into a rigid backtest, we hand it to **Claude agents and let them trade it like real
+traders** — under lab conditions where they cannot cheat.
+
+**One agent per day.** We slice the gold history into trading days (each day's active session) and
+**spawn one Claude agent per day**, all in parallel. Each agent is handed the same brief:
+
+- **What we're looking for** — the strategy idea in plain language (the session + trend + breakout
+  setup to hunt).
+- **A set of tags** — a shared vocabulary of named patterns (`evening_trend_breakout`,
+  `grid_recovery`, `counter_trend_trap`, …) so every agent describes what it sees in the *same
+  words*. Agents may coin a new tag when they spot something not on the list.
+
+**It walks the day forward — no look-ahead.** The agent doesn't get the whole day at once. It
+receives the session **one 15-minute bar at a time**, and to see the next bar it must first commit
+a decision for the current one. It is *physically prevented from seeing the future* — exactly the
+constraint a real trader lives under, and the one almost every AI backtest secretly violates.
+
+**It behaves like a real trader.** As it walks the day it **notes observations** ("4h trend turned
+down, breaking the session low"), **tags** each to the shared vocabulary, **opens a trade** when
+its setup actually triggers, manages it, and **closes** it — committing every decision live, before
+the next bar exists.
+
+**What comes out.** Each agent leaves a structured, tagged record of its day plus its trades scored
+on real (no-peeking) profit. Because every agent used the same tags, all those days become
+**comparable, searchable knowledge** — and a later `distill` agent reads the whole pile to learn
+which tagged setups genuinely paid off, sharpening the brief for the next wave of agents. The
+day-by-day results are also benchmarked against the *real* bot that traded those days, to prove the
+simulation is faithful.
+
+**Why it matters.** It turns a vague trading hunch into a fleet of disciplined, honest analysts
+that each live one day blind, write down what they saw in a common language, and hand that
+knowledge forward — so the system *accumulates* verified insight instead of overfitting to the past.
 
 This is a port of a no-lookahead walk-forward agent harness onto the reverse-engineered
 "Quantum Queen" XAUUSD grid strategy (873 real baskets as ground truth).
 
 ---
 
-## The no-lookahead architecture (the technology)
+## How the no-look-ahead guarantee is enforced
 
 The agent never holds state. The full session lives server-side; the agent advances only by
 committing a decision for the current bar:
